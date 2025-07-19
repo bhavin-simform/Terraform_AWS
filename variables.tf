@@ -81,6 +81,7 @@ variable "ecs_fargate_cpu" {
   description = "CPU for the FARGATE Launch Type"
 }
 
+
 variable "ecs_ec2_service_lb_containerPort" {
   type        = number
   description = "ECS Service EC2 Container Port"

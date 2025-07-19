@@ -32,7 +32,6 @@ resource "aws_ecs_service" "ec2-service" {
   }
 }
 
-# ECS Service for FARGATE
 resource "aws_ecs_service" "fargate_service" {
   name            = "Fargate_Service"
   cluster         = aws_ecs_cluster.backend_cluster.id
@@ -51,7 +50,6 @@ resource "aws_ecs_service" "fargate_service" {
     container_name   = "fargate_task"
     container_port   = var.ecs_task_definition_fargate_container_port
   }
-  # depends_on = [aws_alb_listener.front_end]
 
   tags = {
     Name        = var.tag_name_for_project
